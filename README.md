@@ -22,20 +22,6 @@ Odkaz je záměrně vyčleněn do samostatné sekce, aby nebyl přehlédnut.
 - Uživatelské role a oprávnění: student / člen / správce / technik
 - Reporting: statistiky využití, spotřeby materiálu, seznam chyb a poruch
 
-## Rozsah projektu pro tento předmět
-
-- Koncept + perex (termín: 27.5.) — hotovo
-- Katalog požadavků (funkční + nefunkční) — dokončit do 3.6.
-- Diagramy (role/use-cases, třídní/ER, sekvenční, nasazení) — dokončit do 10.6.
-- Výstupy: `README.md`, `requirements.md` (katalog požadavků), `diagrams/` (SVG/draw.io)
-
-## Doporučená struktura repozitáře
-
-- `README.md` — tento souhrn + plán
-- `requirements.md` — katalog funkčních a nefunkčních požadavků (MarkDown)
-- `diagrams/` — SVG nebo draw.io soubory (ER, class, use-case, deployment)
-- `docs/` — doplňkové popisy, případné wireframy
-
 ## Dokumentace
 
 - `requirements.md` — kompletní katalog funkčních a nefunkčních požadavků (viz soubor)
