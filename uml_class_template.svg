@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <style>
+      .cls-name { font-size: 13px; font-weight: bold; fill: #1a1a2e; }
+      .cls-stereo { font-size: 10px; fill: #555; font-style: italic; }
+      .cls-attr { font-size: 11px; fill: #2c2c54; }
+      .cls-method { font-size: 11px; fill: #2c2c54; }
+      .section-line { stroke: #8888aa; stroke-width: 0.8; }
+      .rel-label { font-size: 10px; fill: #555; }
+      .mult { font-size: 10px; fill: #333; }
+      .legend-title { font-size: 11px; font-weight: bold; fill: #333; }
+      .legend-label { font-size: 10px; fill: #444; }
+    </style>
+    <!-- Inheritance (hollow triangle) -->
+    <marker id="inherit" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0 0 L11 6 L0 12 Z" fill="white" stroke="#555" stroke-width="1"/>
+    </marker>
+    <!-- Realization (hollow triangle, for dashed) -->
+    <marker id="realize" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0 0 L11 6 L0 12 Z" fill="white" stroke="#555" stroke-width="1"/>
+    </marker>
+    <!-- Association arrow -->
+    <marker id="assoc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#555" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <!-- Aggregation diamond (hollow) -->
+    <marker id="aggr" viewBox="0 0 18 10" refX="1" refY="5" markerWidth="14" markerHeight="10" orient="auto-start-reverse">
+      <polygon points="9,1 17,5 9,9 1,5" fill="white" stroke="#555" stroke-width="1"/>
+    </marker>
+    <!-- Composition diamond (filled) -->
+    <marker id="comp" viewBox="0 0 18 10" refX="1" refY="5" markerWidth="14" markerHeight="10" orient="auto-start-reverse">
+      <polygon points="9,1 17,5 9,9 1,5" fill="#555" stroke="#555" stroke-width="1"/>
+    </marker>
+    <!-- Dependency arrow -->
+    <marker id="dep" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#888" stroke-width="1.2" stroke-linecap="round"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="640" fill="#f7f7fb"/>
+
+  <!-- ══════════════════════════════════════════
+       ABSTRACT CLASS: Animal (top center)
+  ══════════════════════════════════════════ -->
+  <g id="Animal">
+    <rect x="320" y="30" width="200" height="140" rx="4" fill="white" stroke="#7c6fcd" stroke-width="1.5"/>
+    <!-- header bg -->
+    <rect x="320" y="30" width="200" height="38" rx="4" fill="#ede9fc" stroke="none"/>
+    <rect x="320" y="60" width="200" height="8" fill="#ede9fc" stroke="none"/>
+    <!-- stereotype -->
+    <text x="420" y="46" text-anchor="middle" class="cls-stereo">«abstract»</text>
+    <!-- name -->
+    <text x="420" y="60" text-anchor="middle" class="cls-name" font-style="italic">Animal</text>
+    <!-- divider -->
+    <line x1="320" y1="68" x2="520" y2="68" class="section-line"/>
+    <!-- attributes -->
+    <text x="334" y="84" class="cls-attr">– name: String</text>
+    <text x="334" y="100" class="cls-attr">– age: int</text>
+    <!-- divider -->
+    <line x1="320" y1="108" x2="520" y2="108" class="section-line"/>
+    <!-- methods -->
+    <text x="334" y="124" class="cls-method">+ speak(): void</text>
+    <text x="334" y="140" class="cls-method" font-style="italic">+ breathe(): void</text>
+    <text x="334" y="156" class="cls-method" font-style="italic">+ move(): void</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       INTERFACE: Serializable (top right)
+  ══════════════════════════════════════════ -->
+  <g id="Serializable">
+    <rect x="600" y="30" width="190" height="118" rx="4" fill="white" stroke="#2aaa8a" stroke-width="1.5" stroke-dasharray="6 2"/>
+    <rect x="600" y="30" width="190" height="38" rx="4" fill="#e6f9f4" stroke="none"/>
+    <rect x="600" y="60" width="190" height="8" fill="#e6f9f4" stroke="none"/>
+    <text x="695" y="46" text-anchor="middle" class="cls-stereo">«interface»</text>
+    <text x="695" y="60" text-anchor="middle" class="cls-name">Serializable</text>
+    <line x1="600" y1="68" x2="790" y2="68" class="section-line"/>
+    <!-- no attributes section just divider placeholder -->
+    <line x1="600" y1="78" x2="790" y2="78" class="section-line" stroke-dasharray="3 2"/>
+    <text x="614" y="96" class="cls-method">+ serialize(): String</text>
+    <text x="614" y="112" class="cls-method">+ deserialize(): void</text>
+    <text x="614" y="128" class="cls-method" fill="#aaa">+ validate(): boolean</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       CONCRETE CLASS: Dog
+  ══════════════════════════════════════════ -->
+  <g id="Dog">
+    <rect x="60" y="290" width="195" height="155" rx="4" fill="white" stroke="#3a86d8" stroke-width="1.5"/>
+    <rect x="60" y="290" width="195" height="32" rx="4" fill="#e8f2fd" stroke="none"/>
+    <rect x="60" y="312" width="195" height="10" fill="#e8f2fd" stroke="none"/>
+    <text x="158" y="310" text-anchor="middle" class="cls-name">Dog</text>
+    <line x1="60" y1="322" x2="255" y2="322" class="section-line"/>
+    <text x="74" y="338" class="cls-attr">– breed: String</text>
+    <text x="74" y="354" class="cls-attr">– vaccinated: boolean</text>
+    <line x1="60" y1="362" x2="255" y2="362" class="section-line"/>
+    <text x="74" y="378" class="cls-method">+ speak(): void</text>
+    <text x="74" y="394" class="cls-method">+ fetch(): void</text>
+    <text x="74" y="410" class="cls-method">+ serialize(): String</text>
+    <text x="74" y="426" class="cls-method">+ deserialize(): void</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       CONCRETE CLASS: Cat
+  ══════════════════════════════════════════ -->
+  <g id="Cat">
+    <rect x="320" y="290" width="195" height="155" rx="4" fill="white" stroke="#3a86d8" stroke-width="1.5"/>
+    <rect x="320" y="290" width="195" height="32" rx="4" fill="#e8f2fd" stroke="none"/>
+    <rect x="320" y="312" width="195" height="10" fill="#e8f2fd" stroke="none"/>
+    <text x="418" y="310" text-anchor="middle" class="cls-name">Cat</text>
+    <line x1="320" y1="322" x2="515" y2="322" class="section-line"/>
+    <text x="334" y="338" class="cls-attr">– indoor: boolean</text>
+    <text x="334" y="354" class="cls-attr">– livesLeft: int</text>
+    <line x1="320" y1="362" x2="515" y2="362" class="section-line"/>
+    <text x="334" y="378" class="cls-method">+ speak(): void</text>
+    <text x="334" y="394" class="cls-method">+ purr(): void</text>
+    <text x="334" y="410" class="cls-method">+ serialize(): String</text>
+    <text x="334" y="426" class="cls-method">+ deserialize(): void</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       CLASS: Owner
+  ══════════════════════════════════════════ -->
+  <g id="Owner">
+    <rect x="170" y="520" width="195" height="90" rx="4" fill="white" stroke="#e07b20" stroke-width="1.5"/>
+    <rect x="170" y="520" width="195" height="32" rx="4" fill="#fef0e4" stroke="none"/>
+    <rect x="170" y="542" width="195" height="10" fill="#fef0e4" stroke="none"/>
+    <text x="268" y="540" text-anchor="middle" class="cls-name">Owner</text>
+    <line x1="170" y1="552" x2="365" y2="552" class="section-line"/>
+    <text x="184" y="568" class="cls-attr">– name: String</text>
+    <line x1="170" y1="576" x2="365" y2="576" class="section-line"/>
+    <text x="184" y="592" class="cls-method">+ addPet(a: Animal): void</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       CLASS: AnimalShelter
+  ══════════════════════════════════════════ -->
+  <g id="Shelter">
+    <rect x="560" y="290" width="200" height="110" rx="4" fill="white" stroke="#cc3366" stroke-width="1.5"/>
+    <rect x="560" y="290" width="200" height="32" rx="4" fill="#fce8f0" stroke="none"/>
+    <rect x="560" y="312" width="200" height="10" fill="#fce8f0" stroke="none"/>
+    <text x="660" y="310" text-anchor="middle" class="cls-name">AnimalShelter</text>
+    <line x1="560" y1="322" x2="760" y2="322" class="section-line"/>
+    <text x="574" y="338" class="cls-attr">– capacity: int</text>
+    <text x="574" y="354" class="cls-attr">– animals: List&lt;Animal&gt;</text>
+    <line x1="560" y1="362" x2="760" y2="362" class="section-line"/>
+    <text x="574" y="378" class="cls-method">+ admit(a: Animal): void</text>
+    <text x="574" y="394" class="cls-method">+ release(a: Animal): void</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       RELATIONSHIPS
+  ══════════════════════════════════════════ -->
+
+  <!-- Dog ──▷ Animal  (inheritance) -->
+  <line x1="158" y1="290" x2="380" y2="170" stroke="#7c6fcd" stroke-width="1.2" marker-end="url(#inherit)"/>
+
+  <!-- Cat ──▷ Animal  (inheritance) -->
+  <line x1="418" y1="290" x2="420" y2="170" stroke="#7c6fcd" stroke-width="1.2" marker-end="url(#inherit)"/>
+
+  <!-- Dog ··▷ Serializable  (realization) -->
+  <line x1="255" y1="340" x2="598" y2="100" stroke="#2aaa8a" stroke-width="1" stroke-dasharray="6 3" marker-end="url(#realize)"/>
+
+  <!-- Cat ··▷ Serializable  (realization) -->
+  <line x1="515" y1="330" x2="600" y2="100" stroke="#2aaa8a" stroke-width="1" stroke-dasharray="6 3" marker-end="url(#realize)"/>
+
+  <!-- Owner ◇── Animal  (aggregation: hollow) -->
+  <line x1="268" y1="520" x2="268" y2="448" stroke="#e07b20" stroke-width="1.2" marker-start="url(#aggr)" marker-end="url(#assoc)"/>
+  <text x="274" y="516" class="mult">1</text>
+  <text x="274" y="455" class="mult">0..*</text>
+
+  <!-- AnimalShelter ◆── Animal  (composition: filled) -->
+  <line x1="610" y1="290" x2="490" y2="170" stroke="#cc3366" stroke-width="1.2" marker-start="url(#comp)" marker-end="url(#assoc)"/>
+  <text x="614" y="285" class="mult">1</text>
+  <text x="502" y="182" class="mult">0..*</text>
+
+  <!-- Owner ··> AnimalShelter  (dependency) -->
+  <line x1="365" y1="565" x2="558" y2="380" stroke="#888" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#dep)"/>
+  <text x="430" y="488" class="rel-label" transform="rotate(-50,430,488)">«uses»</text>
+
+  <!-- ══════════════════════════════════════════
+       LEGEND
+  ══════════════════════════════════════════ -->
+  <rect x="580" y="460" width="290" height="158" rx="6" fill="white" stroke="#ccc" stroke-width="1"/>
+  <text x="725" y="478" text-anchor="middle" class="legend-title">Legenda vztahů</text>
+  <line x1="592" y1="484" x2="858" y2="484" stroke="#ddd" stroke-width="0.8"/>
+
+  <!-- inheritance -->
+  <line x1="600" y1="502" x2="645" y2="502" stroke="#7c6fcd" stroke-width="1.2" marker-end="url(#inherit)"/>
+  <text x="652" y="506" class="legend-label">Dědičnost (extends)</text>
+
+  <!-- realization -->
+  <line x1="600" y1="522" x2="645" y2="522" stroke="#2aaa8a" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#realize)"/>
+  <text x="652" y="526" class="legend-label">Realizace (implements)</text>
+
+  <!-- association -->
+  <line x1="600" y1="542" x2="645" y2="542" stroke="#555" stroke-width="1.2" marker-end="url(#assoc)"/>
+  <text x="652" y="546" class="legend-label">Asociace</text>
+
+  <!-- aggregation -->
+  <line x1="600" y1="562" x2="645" y2="562" stroke="#e07b20" stroke-width="1.2" marker-start="url(#aggr)" marker-end="url(#assoc)"/>
+  <text x="652" y="566" class="legend-label">Agregace (slabá vazba)</text>
+
+  <!-- composition -->
+  <line x1="600" y1="582" x2="645" y2="582" stroke="#cc3366" stroke-width="1.2" marker-start="url(#comp)" marker-end="url(#assoc)"/>
+  <text x="652" y="586" class="legend-label">Kompozice (silná vazba)</text>
+
+  <!-- dependency -->
+  <line x1="600" y1="602" x2="645" y2="602" stroke="#888" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#dep)"/>
+  <text x="652" y="606" class="legend-label">Závislost «uses»</text>
+
+</svg>
