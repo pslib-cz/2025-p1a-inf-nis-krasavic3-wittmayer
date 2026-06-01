@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <style> .actor{font:13px sans-serif;font-weight:bold;} .lifeline{stroke:#666;stroke-dasharray:4 4;} .msg{stroke:#222;stroke-width:2;} .note{font:12px sans-serif;} </style>
+
+  <!-- Entities -->
+  <text x="120" y="40" class="actor">User</text>
+  <text x="420" y="40" class="actor">WebApp</text>
+  <text x="720" y="40" class="actor">PrinterService</text>
+  <text x="1020" y="40" class="actor">Printer</text>
+
+  <!-- Lifelines -->
+  <line x1="140" y1="60" x2="140" y2="600" class="lifeline"/>
+  <line x1="440" y1="60" x2="440" y2="600" class="lifeline"/>
+  <line x1="740" y1="60" x2="740" y2="600" class="lifeline"/>
+  <line x1="1040" y1="60" x2="1040" y2="600" class="lifeline"/>
+
+  <!-- Messages -->
+  <line x1="140" y1="120" x2="440" y2="120" class="msg" marker-end="url(#arrow)"/>
+  <text x="240" y="110" class="note">submitJob(job)</text>
+
+  <line x1="440" y1="180" x2="740" y2="180" class="msg" marker-end="url(#arrow)"/>
+  <text x="540" y="170" class="note">enqueueJob()</text>
+
+  <line x1="740" y1="240" x2="1040" y2="240" class="msg" marker-end="url(#arrow)"/>
+  <text x="820" y="230" class="note">assignPrinter()</text>
+
+  <line x1="1040" y1="300" x2="740" y2="300" class="msg" marker-end="url(#arrow)"/>
+  <text x="820" y="290" class="note">startPrint()</text>
+
+  <line x1="740" y1="380" x2="440" y2="380" class="msg" marker-end="url(#arrow)"/>
+  <text x="520" y="370" class="note">updateJobStatus(complete)</text>
+
+  <line x1="440" y1="440" x2="140" y2="440" class="msg" marker-end="url(#arrow)"/>
+  <text x="240" y="430" class="note">notifyUser()</text>
+
+  <line x1="740" y1="460" x2="440" y2="460" class="msg" marker-end="url(#arrow)"/>
+  <text x="520" y="450" class="note">updateInventory()</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#222" />
+    </marker>
+  </defs>
+
+  <text x="20" y="20" font-size="18" font-weight="bold">Sequence Diagram — Submit and Complete Print Job</text>
+</svg>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <style> .actor{font:14px sans-serif;} .usecase{fill:#fff;stroke:#333;stroke-width:2;} .line{stroke:#333;stroke-width:2;} </style>
+  <!-- Actors -->
+  <g id="actors">
+    <text x="40" y="80" class="actor">User</text>
+    <line x1="100" y1="90" x2="100" y2="220" class="line"/>
+    <text x="40" y="320" class="actor">Technician</text>
+    <line x1="100" y1="330" x2="100" y2="460" class="line"/>
+    <text x="40" y="480" class="actor">Admin</text>
+    <line x1="100" y1="490" x2="100" y2="580" class="line"/>
+  </g>
+
+  <!-- Use cases -->
+  <g id="usecases">
+    <ellipse class="usecase" cx="520" cy="110" rx="160" ry="40"/>
+    <text x="440" y="115">Submit / Upload Job</text>
+
+    <ellipse class="usecase" cx="520" cy="220" rx="160" ry="40"/>
+    <text x="470" y="225">Job Queue / Schedule</text>
+
+    <ellipse class="usecase" cx="520" cy="330" rx="160" ry="40"/>
+    <text x="485" y="335">Manage Printers</text>
+
+    <ellipse class="usecase" cx="520" cy="440" rx="160" ry="40"/>
+    <text x="480" y="445">Manage Filament</text>
+
+    <ellipse class="usecase" cx="920" cy="220" rx="160" ry="40"/>
+    <text x="870" y="225">View Reports</text>
+  </g>
+
+  <!-- Associations -->
+  <line x1="100" y1="140" x2="360" y2="110" class="line"/>
+  <line x1="100" y1="140" x2="360" y2="220" class="line"/>
+  <line x1="100" y1="140" x2="360" y2="330" class="line"/>
+
+  <line x1="100" y1="360" x2="360" y2="330" class="line"/>
+  <line x1="100" y1="360" x2="360" y2="440" class="line"/>
+
+  <line x1="100" y1="520" x2="760" y2="220" class="line"/>
+
+  <!-- Title -->
+  <text x="20" y="20" font-size="18" font-weight="bold">Use-Case Diagram — PrintTrack</text>
+</svg>

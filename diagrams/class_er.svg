@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <style> .cls{fill:#fff;stroke:#222;stroke-width:2;} .title{font:14px sans-serif;font-weight:bold;} .attr{font:12px sans-serif;} .rel{stroke:#222;stroke-width:2;} </style>
+
+  <!-- User -->
+  <rect x="40" y="60" width="260" height="120" class="cls"/>
+  <text x="60" y="84" class="title">User</text>
+  <text x="60" y="106" class="attr">- id: UUID</text>
+  <text x="60" y="124" class="attr">- name: String</text>
+  <text x="60" y="142" class="attr">- role: Enum</text>
+
+  <!-- PrintJob -->
+  <rect x="380" y="60" width="320" height="160" class="cls"/>
+  <text x="400" y="84" class="title">PrintJob</text>
+  <text x="400" y="106" class="attr">- id: UUID</text>
+  <text x="400" y="124" class="attr">- title: String</text>
+  <text x="400" y="142" class="attr">- file: String</text>
+  <text x="400" y="160" class="attr">- estimated_time: int</text>
+
+  <!-- Printer -->
+  <rect x="760" y="60" width="320" height="120" class="cls"/>
+  <text x="780" y="84" class="title">Printer</text>
+  <text x="780" y="106" class="attr">- id: UUID</text>
+  <text x="780" y="124" class="attr">- name: String</text>
+  <text x="780" y="142" class="attr">- status: Enum</text>
+
+  <!-- FilamentSpool -->
+  <rect x="380" y="260" width="300" height="120" class="cls"/>
+  <text x="400" y="284" class="title">FilamentSpool</text>
+  <text x="400" y="306" class="attr">- id: UUID</text>
+  <text x="400" y="324" class="attr">- material: String</text>
+  <text x="400" y="342" class="attr">- color: String</text>
+  <text x="400" y="360" class="attr">- grams_left: int</text>
+
+  <!-- Relations -->
+  <line x1="300" y1="120" x2="380" y2="120" class="rel" marker-end="url(#arrow)"/>
+  <text x="250" y="110" class="attr">1..* submits</text>
+
+  <line x1="700" y1="140" x2="760" y2="140" class="rel" marker-end="url(#arrow)"/>
+  <text x="720" y="130" class="attr">assignedTo</text>
+
+  <line x1="540" y1="240" x2="540" y2="260" class="rel" marker-end="url(#arrow)"/>
+  <text x="520" y="250" class="attr">consumes</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#222" />
+    </marker>
+  </defs>
+
+  <text x="20" y="20" font-size="18" font-weight="bold">Class/ER Diagram — PrintTrack (zjednodušené)</text>
+</svg>
