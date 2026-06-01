@@ -6,6 +6,14 @@ Webový informační systém pro správu 3D tiskáren, tiskových jobů a skladu
 
 PrintTrack je manažerský Informační Systém pro koordinaci více 3D tiskáren a uživatelů v jednom sdíleném prostoru. Umožní plánování a frontování tiskových jobů, automatické odečítání spotřebovaného filamentu, správu uživatelů a oprávnění, reporty využití a historii tisků. Cílem je nahradit ruční záznamy, zjednodušit rezervace tiskáren a zlepšit sledování zásob materiálu.
 
+## Live demo
+
+Viditelná ukázka projektu je nasazena jako GitHub Pages. Zobrazit index (UML diagramy a náhledy) můžete zde:
+
+- Live site: https://pslib-cz.github.io/2025-p1a-inf-nis-krasavic3-wittmayer/
+
+Odkaz je záměrně vyčleněn do samostatné sekce, aby nebyl přehlédnut.
+
 ## Hlavní funkčnosti
 
 - Evidence tiskáren: stav, konfigurace, historie a přiřazení jobů
@@ -27,6 +35,13 @@ PrintTrack je manažerský Informační Systém pro koordinaci více 3D tiskáre
 - `requirements.md` — katalog funkčních a nefunkčních požadavků (MarkDown)
 - `diagrams/` — SVG nebo draw.io soubory (ER, class, use-case, deployment)
 - `docs/` — doplňkové popisy, případné wireframy
+
+## Dokumentace
+
+- `requirements.md` — kompletní katalog funkčních a nefunkčních požadavků (viz soubor)
+- `architecture.md` — návrh architektury a doporučené nasazení
+- `diagrams/` — exportované UML diagramy (SVG)
+- `NEXT_STEPS.md` — seznam následujících kroků
 
 ## Plán práce (krátce)
 
